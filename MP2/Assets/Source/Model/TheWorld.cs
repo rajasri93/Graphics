@@ -29,7 +29,7 @@ public class TheWorld : MonoBehaviour {
         }
     }
 
-    public void SelectObjectAt(GameObject obj, Vector3 p)
+    public GameObject SelectObjectAt(GameObject obj, Vector3 p)
     {
         if (obj.name == "CreationPlane")
         {
@@ -67,6 +67,7 @@ public class TheWorld : MonoBehaviour {
                 }
             }
         }
+        return mSelected;
     }
 
     public void ProcessUserSelection(string objType)
@@ -186,14 +187,39 @@ public class TheWorld : MonoBehaviour {
 
     }
 
-    public float GetSelectedPosition()
+    public Vector3 GetSelectedPosition()
     {
-        return mSelected.transform.position.x;
+        return mSelected.transform.position;
     }
 
     public void SetSelelectedPosition(Vector3 p)
     {
         if (mSelected != null)
             mSelected.transform.position = p;
+    }
+
+
+    public void SetSelelectedRotation(Vector3 p)
+    {
+        Quaternion q = new Quaternion();
+        q.eulerAngles = p;
+        if (mSelected != null)
+            mSelected.transform.localRotation = q;
+    }
+
+    public Vector3 GetSelectedRotation()
+    {
+
+        return mSelected.transform.localRotation.eulerAngles;
+    }
+
+    public void SetSelelectedScale(Vector3 p)
+    {
+        if (mSelected != null)
+            mSelected.transform.localScale = p;
+    }
+    public Vector3 GetSelectedScale()
+    {
+        return mSelected.transform.localScale;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,15 +362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdd1cbbde99c4f5593b9ccc80faaaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSlider: {fileID: 1802984598}
-  xEcho: {fileID: 1142650105}
-  xLabel: {fileID: 654924378}
-  ySlider: {fileID: 676969077}
-  yEcho: {fileID: 706920330}
-  yLabel: {fileID: 41500365}
-  zSlider: {fileID: 504907184}
-  zEcho: {fileID: 1191327611}
-  zLabel: {fileID: 407131630}
+  TheSlider: {fileID: 676969077}
+  TheEcho: {fileID: 706920330}
+  TheLabel: {fileID: 41500365}
 --- !u!1 &102895786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +1999,13 @@ MonoBehaviour:
   TheWorld: {fileID: 1656394574}
   ExitButton: {fileID: 2113626777}
   DeleteMode: {fileID: 1802553463}
+  xSliderComponent: {fileID: 869957946}
+  ySliderComponent: {fileID: 97449219}
+  zSliderComponent: {fileID: 1740906588}
+  toggleGroup: {fileID: 1390147399}
+  translateToggle: {fileID: 751912983}
+  rotateToggle: {fileID: 549051803}
+  scaleToggle: {fileID: 189708017}
 --- !u!1 &746044329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,15 +2519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdd1cbbde99c4f5593b9ccc80faaaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSlider: {fileID: 1802984598}
-  xEcho: {fileID: 1142650105}
-  xLabel: {fileID: 654924378}
-  ySlider: {fileID: 676969077}
-  yEcho: {fileID: 706920330}
-  yLabel: {fileID: 41500365}
-  zSlider: {fileID: 504907184}
-  zEcho: {fileID: 1191327611}
-  zLabel: {fileID: 407131630}
+  TheSlider: {fileID: 1802984598}
+  TheEcho: {fileID: 1142650105}
+  TheLabel: {fileID: 654924378}
 --- !u!1 &886866613
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,15 +4385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdd1cbbde99c4f5593b9ccc80faaaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSlider: {fileID: 1802984598}
-  xEcho: {fileID: 1142650105}
-  xLabel: {fileID: 654924378}
-  ySlider: {fileID: 676969077}
-  yEcho: {fileID: 706920330}
-  yLabel: {fileID: 41500365}
-  zSlider: {fileID: 504907184}
-  zEcho: {fileID: 1191327611}
-  zLabel: {fileID: 407131630}
+  TheSlider: {fileID: 504907184}
+  TheEcho: {fileID: 1191327611}
+  TheLabel: {fileID: 407131630}
 --- !u!1 &1743813532
 GameObject:
   m_ObjectHideFlags: 0

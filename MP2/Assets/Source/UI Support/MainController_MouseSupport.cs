@@ -22,12 +22,13 @@ public partial class MainController : MonoBehaviour {
             if (hit)
             {
                 Debug.Log("HIT!!");
-                TheWorld.SelectObjectAt(hitInfo.transform.gameObject, hitInfo.point);
+                mSelected = TheWorld.SelectObjectAt(hitInfo.transform.gameObject, hitInfo.point);
             }
             else
             {
                 Debug.Log("No hit");
             }
+            UpdateSliderValues();
             //xSlider.SetSliderValue(TheWorld.GetSelectedRadius());
         }
     }

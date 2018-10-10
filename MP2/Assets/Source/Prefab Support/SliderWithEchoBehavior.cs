@@ -4,80 +4,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderWithEchoBehavior : MonoBehaviour {
+public class SliderWithEchoBehavior : MonoBehaviour
+{
 
-    public Slider xSlider = null;
-    public Text xEcho = null;
-    public Text xLabel = null;
-    public Slider ySlider = null;
-    public Text yEcho = null;
-    public Text yLabel = null;
-    public Slider zSlider = null;
-    public Text zEcho = null;
-    public Text zLabel = null;
+    public Slider TheSlider = null;
+    public Text TheEcho = null;
+    public Text TheLabel = null;
 
-    //public delegate void SliderDelegates(float change, String axis);
-    //private SliderDelegates sliderDelegates = null;
+    public delegate void SliderCallbackDelegate(float v);      // defined a new data type
+    private SliderCallbackDelegate mCallBack = null;           // private instance of the data type
 
-    public delegate void SliderCallbackDelegate(float v);
-    //public delegate void SliderCallbackDelegate(float v, String s);
-    private SliderCallbackDelegate sliderCallBack = null;
 
     // Use this for initialization
-    void Start () {
-        Debug.Log("Asserting..");
-        Debug.Assert(xSlider != null);
-        Debug.Assert(ySlider != null);
-        Debug.Assert(zSlider != null);
-        xSlider.onValueChanged.AddListener(SliderValueChange);
-        //xSlider.onValueChanged.AddListener(SliderValueChanged);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+        Debug.Assert(TheSlider != null);
+        Debug.Assert(TheEcho != null);
+        Debug.Assert(TheLabel != null);
 
-    String[] axes = { "x", "y", "z" };
-    //void SliderValueChange(float v, String axis)
-    public void SliderValueChange(float v){
-        xEcho.text = v.ToString("0.0000");
-        if (sliderCallBack != null)
-            sliderCallBack(v);
+        TheSlider.onValueChanged.AddListener(SliderValueChange);
     }
 
-    public void SliderValueChanged(float change, String axis) {
-
+    public void SetSliderListener(SliderCallbackDelegate listener)
+    {
+        mCallBack = listener;
     }
 
-    public float GetSliderValue() { return xSlider.value; }
-    public void SetSliderLabel(string l) { xLabel.text = l; }
-    public void SetSliderValue(float v) { xSlider.value = v; SliderValueChange(v); }
-
-
-    public void SetSliderWithAxis(string s, float v) {
-        switch(s){
-            case "x":
-                xSlider.value = v;
-                SliderValueChanged(v, s);
-                break;
-            case "y":
-                ySlider.value = v;
-                SliderValueChanged(v, s);
-                break;
-            case "z":
-                zSlider.value = v;
-                SliderValueChanged(v, s);
-                break;
-            default:
-                break;
-        }
+    // GUI element changes the object
+    void SliderValueChange(float v)
+    {
+        TheEcho.text = v.ToString("0.0000");
+        // Debug.Log("SliderValueChange: " + v);
+        if (mCallBack != null)
+            mCallBack(v);
     }
 
+    public float GetSliderValue() { return TheSlider.value; }
+    public void SetSliderLabel(string l) { TheLabel.text = l; }
+    public void SetSliderValue(float v) { TheSlider.value = v; SliderValueChange(v); }
     public void InitSliderRange(float min, float max, float v)
     {
-        xSlider.minValue = min;
-        xSlider.maxValue = max;
+        TheSlider.minValue = min;
+        TheSlider.maxValue = max;
         SetSliderValue(v);
     }
 
