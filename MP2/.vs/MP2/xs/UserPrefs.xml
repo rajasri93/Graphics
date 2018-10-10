@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{354637E4-A448-595C-B21F-48D49DBD8B4D}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Source/UI Support/MainController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Source/UI Support/MainController_MouseSupport.cs">
     <Files>
-      <File FileName="Assets/Source/UI Support/MainController.cs" Line="17" Column="26" />
+      <File FileName="Assets/Source/UI Support/MainController.cs" Line="12" Column="5" />
       <File FileName="../project2/Assets/EmptyTextFile.txt" Line="189" Column="71" />
       <File FileName="Assets/Source/UI Support/MainController_MouseSupport.cs" Line="5" Column="1" />
       <File FileName="Assets/Source/Model/TheWorld.cs" Line="38" Column="30" />
@@ -59,7 +59,6 @@
       <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="67" column="1" />
       <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="64" column="1" />
       <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="63" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/MainController.cs" relfile="Assets/Source/UI Support/MainController.cs" line="17" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

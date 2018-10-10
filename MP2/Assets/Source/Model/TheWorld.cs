@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TheWorld : MonoBehaviour {
 
     public GameObject Pointer;
     public const float clickSize = 0.5f;
     public GameObject mSelected = null;
+    public Text text = null;
 
     // Use this for initialization
     void Start () {
         Debug.Assert(Pointer!=null);
+        text.text = "Selected:None";
 	}
 	
 	// Update is called once per frame
@@ -31,7 +34,9 @@ public class TheWorld : MonoBehaviour {
         if (obj.name == "CreationPlane")
         {
             p.y = clickSize / 2f;
+            ResetSelectionRenderer(mSelected);
             mSelected = null;
+            SetSelectedText();
         }
         else
         {
@@ -39,12 +44,14 @@ public class TheWorld : MonoBehaviour {
                 Debug.Log("OBJECT UNSELECTED!");
                 ResetSelectionRenderer(mSelected);
                 mSelected = null;
+                SetSelectedText();
             } else {
                 Debug.Log("OBJECT HERE TO BE SELECTED!");
                 if(mSelected!=null) {
                     ResetSelectionRenderer(mSelected);
                 }
                 mSelected = obj;
+                SetSelectedText();
             }
         }
     }
@@ -75,14 +82,24 @@ public class TheWorld : MonoBehaviour {
     }
 
     public void ResetSelectionRenderer(GameObject gameObject) {
-        if(gameObject!=null && !IsOriginalGameObject(gameObject)){
-            Renderer parentRenderer = gameObject.transform.parent.GetComponent<Renderer>();
-            //Renderer parentRenderer = gameObject.GetComponentInParent<Renderer>();
-            gameObject.GetComponent<Renderer>().material.color = parentRenderer.material.color;
-        } else {
-            Color originalColor = GetOriginalObjectColor(gameObject);
-            if (originalColor != null) {
-                gameObject.GetComponent<Renderer>().material.color = originalColor;
+
+
+        if(gameObject!=null) {
+            if(!IsOriginalGameObject(gameObject)) {
+                Renderer siblingRenderer = null;
+                if (gameObject.transform.GetSiblingIndex() > 0)
+                {
+                    siblingRenderer = gameObject.transform.parent.GetChild(0).GetComponent<Renderer>();
+                    gameObject.GetComponent<Renderer>().material.color = siblingRenderer.material.color;
+                } else {
+                    gameObject.GetComponent<Renderer>().material.color = Color.white;
+                }
+            } else {
+                Color originalColor = GetOriginalObjectColor(gameObject);
+                if (originalColor != null)
+                {
+                    gameObject.GetComponent<Renderer>().material.color = originalColor;
+                }
             }
         }
     }
@@ -137,6 +154,15 @@ public class TheWorld : MonoBehaviour {
             }
         }
         return c;
+    }
+
+    public void SetSelectedText() {
+        if(mSelected !=null) {
+            text.text = "Selected:" + mSelected.name;
+        } else {
+            text.text = "Selected:None";
+        }
+
     }
 
     public float GetSelectedPosition()
