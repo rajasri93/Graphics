@@ -1,0 +1,215 @@
+﻿UISpport - MC_MS
+
+using System; // for assert
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI; // for GUI elements: Button, Toggle
+
+public partial class MainController : MonoBehaviour {
+
+    // Mouse click selection 
+    // Mouse click checking
+    void CheckMouseClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Debug.Log("Mouse is down");
+
+            RaycastHit hitInfo = new RaycastHit();
+            // Note: mTarget is in a layer not rayCast!!
+
+            bool hit = Physics.Raycast(MainCamera.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, 1);
+            // 1 is the mask for default layer
+            if (hit)
+            {
+                TheWorld.SelectObjectAt(hitInfo.transform.gameObject, hitInfo.point);
+                // Main controller SHOULD NOT know anything about what
+                // user wants to do with mouse click
+            }
+            else {
+                Debug.Log("No hit");
+            }
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+UISupport -MC
+
+using System; // for assert
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI; // for GUI elements: Button, Toggle
+
+public partial class MainController : MonoBehaviour
+{
+
+    // reference to all UI elements in the Canvas
+    public Camera MainCamera = null;
+    public TheWorld TheWorld = null;
+
+    private const float kTaretSize = 0.5f;
+
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Assert(MainCamera != null);
+        Debug.Assert(TheWorld != null);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        CheckMouseClick();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+UISupport - DDC
+
+using System; // for assert
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI; // for GUI elements: Button, Toggle
+
+public partial class DropDownCreate : MonoBehaviour
+{
+
+    // reference to all UI elements in the Canvas
+    public Dropdown mCreateMenu = null;
+    public TheWorld TheWorld = null;
+
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Assert(mCreateMenu != null);
+        Debug.Assert(TheWorld != null);
+
+        // Drop down menu
+        /* if we were to add options during runtime
+            List<Dropdown.OptionData> list = new List<Dropdown.OptionData>();
+            list.Add(new Dropdown.OptionData("Cube"));          // index = 0
+            list.Add(new Dropdown.OptionData("Sphere"));        // index = 1
+            list.Add(new Dropdown.OptionData("Cylinder"));      // index = 2
+            mCreateMenu.AddOptions(list);
+        */
+        mCreateMenu.onValueChanged.AddListener(UserSelection);
+    }
+
+    String[] kLoadType = { "", "MyCube", "MySphere", "MyCylinder" };
+    void UserSelection(int index)
+    {
+        if (index == 0)
+            return;
+
+        mCreateMenu.value = 0; // always show the menu function: Object to create
+
+        // inform the world of user's action
+        TheWorld.ProcessUserSelection(kLoadType[index]);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+PrefadSupport - MB
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovementBehavior : MonoBehaviour
+{
+
+    public float mMovementLimit = 5f;               // the movement limit
+    public Vector3 mMovementDirection = Vector3.up; // the movement direction
+    public Color mToggleColor = Color.white;        // color change
+    public float mRotationSpeed = 90f;              // per second
+    public float mLinearSpeed = 1f;                 // per second
+
+    private int mDirection = 1;                     // moving in positive or negative direction
+
+    // Use this for initialization
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float dt = Time.deltaTime;
+        // Update rotation
+        transform.Rotate(Vector3.up, mRotationSpeed * dt);
+
+        Vector3 delta = mMovementDirection * (mDirection * mLinearSpeed * dt);
+        transform.localPosition = transform.localPosition + delta;
+        float test = Vector3.Dot(transform.localPosition, mMovementDirection);
+
+        int moveDirection = 1;
+        if (test > mMovementLimit)
+            moveDirection = -1;
+        else if (test < 0f)
+            moveDirection = 1;
+        else moveDirection = mDirection;
+
+        if (moveDirection != mDirection)
+        {
+            mDirection = moveDirection;
+
+            // show how to access components which may or may not be there
+            Renderer r = GetComponent<Renderer>();
+            if (r != null)
+            {
+                Material m = r.material;
+                m.color = m.color + (mDirection * mToggleColor);
+            }
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+Model - World
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TheWorld : MonoBehaviour
+{
+
+    public GameObject CreationTarget;
+    private const float kTargetSize = 0.5f;
+
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Assert(CreationTarget != null);
+
+        CreationTarget.GetComponent<Renderer>().material.color = Color.black;
+        CreationTarget.transform.localScale = new Vector3(kTargetSize, kTargetSize, kTargetSize);
+        CreationTarget.transform.localPosition = new Vector3(0, kTargetSize / 2, 0);
+        CreationTarget.layer = 8; // this layer will not be ray casted!
+    }
+
+    public void SelectObjectAt(GameObject obj, Vector3 p)
+    {
+        if (obj.name == "CreationPlane")
+        {
+            p.y = kTargetSize / 2f;
+            CreationTarget.transform.localPosition = p;
+        }
+        else
+        {
+            Destroy(obj);
+        }
+    }
+
+    public void ProcessUserSelection(string objType)
+    {
+        GameObject newObj = Instantiate(Resources.Load(objType)) as GameObject;
+        Vector3 p = CreationTarget.transform.localPosition;
+        p.y = 0.5f;
+        newObj.transform.localPosition = p;
+    }
+}
