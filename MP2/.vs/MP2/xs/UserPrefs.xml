@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{354637E4-A448-595C-B21F-48D49DBD8B4D}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Source/UI Support/MainController_MouseSupport.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Source/Prefab Support/SliderWithEchoBehavior.cs">
     <Files>
-      <File FileName="Assets/Source/UI Support/MainController.cs" Line="12" Column="5" />
+      <File FileName="Assets/Source/UI Support/MainController.cs" Line="19" Column="1" />
       <File FileName="../project2/Assets/EmptyTextFile.txt" Line="189" Column="71" />
       <File FileName="Assets/Source/UI Support/MainController_MouseSupport.cs" Line="5" Column="1" />
-      <File FileName="Assets/Source/Model/TheWorld.cs" Line="38" Column="30" />
-      <File FileName="Assets/Source/UI Support/DropDownCreate.cs" Line="17" Column="6" />
+      <File FileName="Assets/Source/Model/TheWorld.cs" Line="17" Column="20" />
+      <File FileName="Assets/Source/UI Support/DropDownCreate.cs" Line="26" Column="17" />
       <File FileName="Assets/Source/Prefab Support/NewObjectBehavior.cs" Line="7" Column="43" />
-      <File FileName="Assets/Source/UI Support/ToggleGroup.cs" Line="16" Column="11" />
-      <File FileName="../../Desktop/UWB/Fall2018/graphics/Week2 2/2.SliderWithEcho/Assets/Source/UI Support/MainController.cs" Line="19" Column="41" />
+      <File FileName="Assets/Source/UI Support/ToggleGroup.cs" Line="12" Column="5" />
+      <File FileName="../../Desktop/UWB/Fall2018/graphics/Week2 2/2.SliderWithEcho/Assets/Source/UI Support/MainController.cs" Line="12" Column="32" />
       <File FileName="../../Desktop/UWB/Fall2018/graphics/Week2 2/2.SliderWithEcho/Assets/Source/UI Support/MainController_MouseSupport.cs" Line="14" Column="10" />
       <File FileName="../../Desktop/UWB/Fall2018/graphics/Week2 2/2.SliderWithEcho/Assets/Source/Prefab Support/ScalableSphere.cs" Line="1" Column="1" />
       <File FileName="../../Desktop/UWB/Fall2018/graphics/Week2 2/2.SliderWithEcho/Assets/Source/Prefab Support/UIPrefab/SliderWithEcho.cs" Line="46" Column="1" />
@@ -20,45 +20,28 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/DropDownCreate.cs" relfile="Assets/Source/UI Support/DropDownCreate.cs" line="19" column="20" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/DropDownCreate.cs" relfile="Assets/Source/UI Support/DropDownCreate.cs" line="20" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/DropDownCreate.cs" relfile="Assets/Source/UI Support/DropDownCreate.cs" line="22" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/DropDownCreate.cs" relfile="Assets/Source/UI Support/DropDownCreate.cs" line="25" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/DropDownCreate.cs" relfile="Assets/Source/UI Support/DropDownCreate.cs" line="26" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="82" column="83" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="31" column="1" />
+      <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
       <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="34" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="81" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="82" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="92" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="92" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="94" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="84" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="85" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="55" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="56" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="60" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="62" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="68" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="74" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="76" column="1" />
       <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="79" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="57" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="40" column="51" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="45" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="78" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="110" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="107" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="99" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="100" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="103" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="121" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="122" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="127" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="130" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="133" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="139" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="65" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="67" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="64" column="1" />
-      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="63" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="80" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="82" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="83" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="85" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="94" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="104" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="105" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="108" column="86" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="87" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/MainController.cs" relfile="Assets/Source/UI Support/MainController.cs" line="19" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/UI Support/MainController.cs" relfile="Assets/Source/UI Support/MainController.cs" line="29" column="44" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="174" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="173" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="13" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="44" column="1" />
+      <Breakpoint file="/Users/rajasri/unity/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="43" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

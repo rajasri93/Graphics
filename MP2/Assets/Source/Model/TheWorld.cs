@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class TheWorld : MonoBehaviour {
 
-    public GameObject Pointer;
     public const float clickSize = 0.5f;
     public GameObject mSelected = null;
     public Text text = null;
+    public bool deletionActive = false;
+    //public Tree hierarchyTree = null;
 
     // Use this for initialization
     void Start () {
-        Debug.Assert(Pointer!=null);
         text.text = "Selected:None";
 	}
 	
@@ -40,18 +40,31 @@ public class TheWorld : MonoBehaviour {
         }
         else
         {
-            if(mSelected!=null && mSelected == obj) {
-                Debug.Log("OBJECT UNSELECTED!");
-                ResetSelectionRenderer(mSelected);
-                mSelected = null;
-                SetSelectedText();
-            } else {
-                Debug.Log("OBJECT HERE TO BE SELECTED!");
-                if(mSelected!=null) {
-                    ResetSelectionRenderer(mSelected);
+            if(deletionActive){
+                if(mSelected == obj) {
+                    mSelected = null;
+                } else {
+                    Destroy(obj);
                 }
-                mSelected = obj;
-                SetSelectedText();
+                Destroy(obj);
+            } else {
+                if (mSelected != null && mSelected == obj)
+                {
+                    Debug.Log("OBJECT UNSELECTED!");
+                    ResetSelectionRenderer(mSelected);
+                    mSelected = null;
+                    SetSelectedText();
+                }
+                else
+                {
+                    Debug.Log("OBJECT HERE TO BE SELECTED!");
+                    if (mSelected != null)
+                    {
+                        ResetSelectionRenderer(mSelected);
+                    }
+                    mSelected = obj;
+                    SetSelectedText();
+                }
             }
         }
     }
@@ -154,6 +167,14 @@ public class TheWorld : MonoBehaviour {
             }
         }
         return c;
+    }
+
+    public void setDeletionMode(bool selected) {
+        if(selected) {
+            deletionActive = true;
+        } else {
+            deletionActive = false;
+        }
     }
 
     public void SetSelectedText() {
