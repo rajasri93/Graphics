@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{354637E4-A448-595C-B21F-48D49DBD8B4D}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Source/Prefab Support/SliderWithEchoBehavior.cs">
+    <Files>
+      <File FileName="Assets/Source/UI Support/MainController.cs" Line="92" Column="6" />
+      <File FileName="Assets/Source/UI Support/MainController_MouseSupport.cs" Line="31" Column="34" />
+      <File FileName="Assets/Source/Model/TheWorld.cs" Line="224" Column="6" />
+      <File FileName="Assets/Source/UI Support/DropDownCreate.cs" Line="26" Column="17" />
+      <File FileName="Assets/Source/Prefab Support/SliderWithEchoBehavior.cs" Line="53" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="34" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="68" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="75" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="77" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="80" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="81" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="83" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="84" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="86" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="95" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="105" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="106" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="109" column="86" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="88" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/UI Support/MainController.cs" relfile="Assets/Source/UI Support/MainController.cs" line="40" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/UI Support/MainController.cs" relfile="Assets/Source/UI Support/MainController.cs" line="50" column="44" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="175" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="174" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="13" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="44" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/MP2/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="43" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

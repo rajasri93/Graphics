@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{739774EB-D560-BCE9-50CC-EAAE304BA474}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Source/Prefab Support/UI Prefab/SliderWithEcho.cs">
+    <Files>
+      <File FileName="Assets/Source/Model/TheWorld.cs" Line="40" Column="26" />
+      <File FileName="Assets/Source/Prefab Support/UI Prefab/SliderWithEcho.cs" Line="6" Column="24" />
+      <File FileName="Assets/Source/Prefab Support/UI Prefab/XfromControl.cs" Line="17" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/RajasriNanduriMP3/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="57" column="1" />
+      <Breakpoint file="/Users/rajasri/Desktop/github/Graphics/RajasriNanduriMP3/Assets/Source/Model/TheWorld.cs" relfile="Assets/Source/Model/TheWorld.cs" line="59" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
