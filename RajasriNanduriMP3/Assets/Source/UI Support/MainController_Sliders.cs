@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewMonoBehaviour : MonoBehaviour
+public partial class MainController : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
+    void setSphereInterval(float v)
     {
-
+        mModel.Interval = v;
     }
 
-    // Update is called once per frame
-    void Update()
+    void setSphereSpeed(float v)
     {
+        mModel.Speed = v;
+    }
 
+    void setSphereLifespan(float v)
+    {
+        mModel.LifeSpan = v;
     }
 }

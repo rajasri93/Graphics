@@ -12,16 +12,19 @@ public partial class TheWorld : MonoBehaviour {
     public GameObject floor;
     public GameObject BackWall;
 
+    [SerializeField]
+    public MovingSphere movingSpherePrefab;
+
     public GameObject LeftLineEndPt;
     public GameObject RightLineEndPt;
 
     public GameObject AimLine;
-
-    private float timeToCoverPortal = 5;
-    private float timeInterval = 2;
     private float time = 0;
     Vector3 portalVelocity = Vector3.zero;
     float portalLength = 0;
+    public float Speed { set; get; }
+    public float Interval { set; get; }
+    public float LifeSpan { set; get; }
 
     void Start () {
         Debug.Assert(leftWall != null);
@@ -38,13 +41,11 @@ public partial class TheWorld : MonoBehaviour {
     private void Update()
     {
         InitiatePortal();
-        if (time > timeInterval) {
+        if (time > Interval) {
             time = 0;
+            CreateMovingSpehere();
         } else {
             time += Time.deltaTime;
-        }
-        if(Math.Abs(time)<=0.01f) {
-            InitiatePortalObjects();
         }
     }
 
@@ -63,16 +64,11 @@ public partial class TheWorld : MonoBehaviour {
         AimLine.transform.localPosition = leftPosition + (rightPosition - leftPosition) * 0.5f;
     }
 
-    private void InitiatePortalObjects() {
-        GameObject portalObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        portalObject.GetComponent<Renderer>().material.color = Color.green;
-        portalObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        portalObject.transform.localPosition = LeftLineEndPt.transform.localPosition;
-        TranslatePortalObjects(portalObject);
-    }
-
-    private void TranslatePortalObjects(GameObject portalObject) {
-        portalObject.transform.localPosition += (portalLength / timeToCoverPortal) * portalVelocity;
+    private void CreateMovingSpehere() {
+        MovingSphere portalObject = GameObject.Instantiate(movingSpherePrefab, LeftLineEndPt.transform.localPosition, new Quaternion(0,0,0,0));
+        portalObject.velocity = portalVelocity;
+        portalObject.speed = Speed;
+        portalObject.lifetime = LifeSpan;
     }
 
     private void ComputePortalObjectVelocity() {
