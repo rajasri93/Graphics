@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,18 +8,26 @@ public class XfromControl : MonoBehaviour {
     public Toggle T, R, S;
     public SliderWithEcho X, Y, Z;
     public Text ObjectName;
+    public GameObject barrierPlane;
+    public TheWorld theWorld = null;
 
     private GameObject mSelected;
     private Vector3 mPreviousSliderValues = Vector3.zero;
 
 	// Use this for initialization
 	void Start () {
+
+        Debug.Assert(theWorld != null);
+
         T.onValueChanged.AddListener(SetToTranslation);
         R.onValueChanged.AddListener(SetToRotation);
         S.onValueChanged.AddListener(SetToScaling);
         X.SetSliderListener(XValueChanged);
         Y.SetSliderListener(YValueChanged);
         Z.SetSliderListener(ZValueChanged);
+
+        ObjectName.text = "Barrier XFormControl";
+        mSelected = barrierPlane;
 
         T.isOn = true;
         R.isOn = false;
@@ -49,6 +58,7 @@ public class XfromControl : MonoBehaviour {
     void SetToRotation(bool v)
     {
         Vector3 r = ReadObjectXfrom();
+        // r= barrierPlane.transform.localRotation.eulerAngles;
         mPreviousSliderValues = r;
         X.InitSliderRange(-180, 180, r.x);
         Y.InitSliderRange(-180, 180, r.y);
@@ -93,26 +103,6 @@ public class XfromControl : MonoBehaviour {
     }
     //---------------------------------------------------------------------------------
 
-    // new object selected
-    public void SetSelectedObject(GameObject g)
-    {
-        mSelected = g;
-        mPreviousSliderValues = Vector3.zero;
-        if (g != null)
-            ObjectName.text = "Selected:" + g.name;
-        else
-            ObjectName.text = "Selected: none";
-        ObjectSetUI();
-    }
-
-    public void ObjectSetUI()
-    {
-        Vector3 p = ReadObjectXfrom();
-        X.SetSliderValue(p.x);  // do not need to call back for this comes from the object
-        Y.SetSliderValue(p.y);
-        Z.SetSliderValue(p.z);
-    }
-
     private Vector3 ReadObjectXfrom()
     {
         Vector3 p;
@@ -154,5 +144,7 @@ public class XfromControl : MonoBehaviour {
         {
             mSelected.transform.localRotation *= q;
         }
+
+        theWorld.SetNormal();
     }
 }

@@ -8,26 +8,20 @@ using UnityEngine.EventSystems;
 public partial class MainController : MonoBehaviour {
 
     // Mouse click selection 
-    void LMBSelect()
+    void LMBUp()
     {
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            // Debug.Log("Mouse is down");
-
-            // Copied from: https://forum.unity.com/threads/preventing-ugui-mouse-click-from-passing-through-gui-controls.272114/
-            if (!EventSystem.current.IsPointerOverGameObject()) // check for GUI
+        //Debug.Log(Input.GetMouseButtonUp(0));
+        if(!EventSystem.current.IsPointerOverGameObject()) {
+            if (Input.GetMouseButtonUp(0))
             {
-
                 RaycastHit hitInfo = new RaycastHit();
-
                 bool hit = Physics.Raycast(MainCamera.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, 1);
-                // 1 is the mask for default layer
-
-                /*if (hit)
-                    SelectObject(hitInfo.transform.gameObject);
-                else
-                    SelectObject(null);*/
+                if (hit)
+                {
+                    ManipulateLineEnds(hitInfo.transform.gameObject, hitInfo.point);
+                    Debug.Log("gameobject :: " + hitInfo.transform.gameObject);
+                }
             }
-        } 
+        }
     }
 }
