@@ -28,7 +28,7 @@ public partial class TheWorld : MonoBehaviour {
     //public float NormalLength = 5f; 
 
     [SerializeField]
-    public MovingSphere movingSpherePrefab;
+    public SphereWithShadows movingSpherePrefab;
 
     private float time = 0;
     Vector3 aimLineVelocity = Vector3.zero;
@@ -126,7 +126,9 @@ public partial class TheWorld : MonoBehaviour {
 
     private void CreateMovingSpehere()
     {
-        MovingSphere portalObject = GameObject.Instantiate(movingSpherePrefab, LeftLineEndPt.transform.localPosition, new Quaternion(0, 0, 0, 0));
+        SphereWithShadows portalObject = GameObject.Instantiate(movingSpherePrefab, LeftLineEndPt.transform.localPosition, new Quaternion(0, 0, 0, 0));
+        portalObject.SetPosition(LeftLineEndPt.transform.localPosition);
+        portalObject.World = this;
         portalObject.velocity = aimLineVelocity;
         portalObject.speed = Speed;
         portalObject.lifetime = LifeSpan;
